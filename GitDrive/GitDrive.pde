@@ -1,16 +1,20 @@
 import processing.net.*;
 Client JClient;
 String JText;
+int x;
 void setup()
 {
-  size(displayWidth, displayHeight);
-  JClient = new Client(this, "168.229.254.13", 5204);
+  size(200,200);
+  JClient = new Client(this, "10.31.66.4", 5204);
   JText= "";
 }
 
 void draw()
 {
   if(JClient.available() > 0) {
-    JText = JClient.readString();
+    //JText = JClient.readString();
+    x = JClient.read();
   }
+  background(x);
+  println(x);
 }
