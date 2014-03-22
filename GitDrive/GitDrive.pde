@@ -33,7 +33,6 @@ void draw()
 
 void keyReleased() {
   if (key != CODED) {
-    BString[0] = BString[0] + key;
     switch(key) {
     case BACKSPACE:
       BString[0] = BString[0].substring(0, max(0, BString[0].length()-1));
