@@ -21,7 +21,7 @@ void draw()
 {
   background(255);
   fill(100);
-  text(BString[0], 100, 100);
+  text(BString[0]+(frameCount/10 % 2 == 0 ? "|" : ""), 35, 45);
   if (JClient.available() > 0) {
     JText = JClient.readString();
 
@@ -29,6 +29,7 @@ void draw()
   }
   //background(x);
   println(JText);
+  JClient.write(BString[0]);
 }
 
 void keyReleased() {
@@ -41,15 +42,16 @@ void keyReleased() {
       BString[0] += "    ";
       break;
     case ENTER:
-      saveStrings("yolo.txt", BString);
-      println("Saved.");
-      break;
     case RETURN:
       // comment out the following two lines to disable line-breaks
       BString[0] += "\n";
       break;
     case ESC:
     case DELETE:
+      break;
+    case CONTROL:
+      saveStrings("yolo.txt", BString);
+      println("Saved.");
       break;
     default:
       BString[0] += key;
