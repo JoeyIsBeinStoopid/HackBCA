@@ -1,12 +1,14 @@
 import processing.net.*;
 BClient bc;
 UI ui;
+String codename;
 void setup()
 {
   size(500, 500);
   ui = new UI();
   bc = new BClient();
   ui.loadStartScreen();
+  codename= "";
 }
 
 void draw()
@@ -21,5 +23,12 @@ void draw()
 
 void keyReleased() {
   ui.keyPress();
+    codename = textInput(codename, "", false) ;
+    if(key==ENTER)
+    {
+      saveStrings(codename, bc.BString );
+    }
+     
 }
+
 
