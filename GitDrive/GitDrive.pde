@@ -23,7 +23,7 @@ void draw()
   }
 }
 
-void keyReleased() {
+void keyPressed() {
   ui.keyPress();
   if (ui.Jinput==false)
   {

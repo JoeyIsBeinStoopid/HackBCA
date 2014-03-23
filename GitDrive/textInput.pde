@@ -2,7 +2,7 @@ String textInput(String text, String saveName, boolean enter) {
   String[] texts = new String[1];
   texts[0] = text;
 
-  if (texts[0].length() >= 53) {
+  if (elchar >= 53) {
     if (elchar % 53 == 0) {
       texts[0] += "\n";
     }
@@ -11,9 +11,11 @@ String textInput(String text, String saveName, boolean enter) {
     switch(key) {
     case BACKSPACE:
       texts[0] = texts[0].substring(0, max(0, texts[0].length()-1));
+      elchar--;
       break;
     case TAB:
       texts[0] += "    ";
+      elchar += 4;
       break;
     case ENTER:
     case RETURN:
