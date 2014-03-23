@@ -2,12 +2,12 @@ class UI {
   int state= 0;
   int startState = 0;
   int docState = 1;
-  String username;
+  //String username;
   boolean shouldLoad;
   boolean Jinput,Jinput2;
 
   UI() {
-    username = "";
+    //username = "";
     shouldLoad = false;
   }
 

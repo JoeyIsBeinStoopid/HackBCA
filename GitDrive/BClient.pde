@@ -21,10 +21,6 @@ class BClient {
       Joldtime = millis();
       BString[0] = JClient.readString();
     }
-    if(ui.Jinput2 == true)
-    {
-      JClient.write("u:" +ui.username);
-    }
     //println(BString[0]);
   }
 }
