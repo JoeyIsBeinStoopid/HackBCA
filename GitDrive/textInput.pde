@@ -2,8 +2,8 @@ String textInput(String text, String saveName, boolean enter) {
   String[] texts = new String[1];
   texts[0] = text;
 
-  if (elchar >= 53) {
-    if (elchar % 53 == 0) {
+  if (elchar >= 47) {
+    if (elchar % 47 == 0) {
       texts[0] += "\n";
     }
   }

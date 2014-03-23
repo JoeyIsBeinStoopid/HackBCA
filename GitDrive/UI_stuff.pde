@@ -1,5 +1,5 @@
 class UI {
-  int state;
+  int state= 0;
   int startState = 0;
   int docState = 1;
   String username;
@@ -36,15 +36,15 @@ class UI {
     textSize(20);
     text("Connect to server", width/2, height/2);
     if (buttonCenter(width/2, height/2, 200, 100)) {
-      if (username.length() > 0) {
+      if (codename.length() > 0) {
         loadDocScreen();
         Jinput2= true;
       } 
-      else {
-        fill(255, 0, 0);
-        textAlign(CENTER);
-        text("Please choose a username.", width/2, height/2 - 100);
-      }
+      //else {
+        //fill(255, 0, 0);
+       // textAlign(CENTER);
+        //text("Please choose a username.", width/2, height/2 - 100);
+      //}
     }
     fill(255);
     textSize(20);
@@ -52,16 +52,17 @@ class UI {
     if (Jinput == false)
     {
       textAlign(CENTER);
+      fill(0);
       text("Please Select a file name, including extensions (ex. code.CPP)", width/2, height/2-150);
       textAlign(CORNER);
       textDisplay(codename,width/2-100, height/2-125);
     }
-    else {
-       textAlign(CENTER);
-      text("Please choose a username before connecting:", width/2, height/2 - 125);
-      textAlign(CORNER);
-      textDisplay(username,width/2-100, height/2-100);
-    }
+    //else {
+      //textAlign(CENTER);
+      //text("Please choose a username before connecting:", width/2, height/2 - 125);
+      //textAlign(CORNER);
+      //textDisplay(username,width/2-100, height/2-100);
+    //}
   }
 
 
@@ -77,10 +78,10 @@ class UI {
   void keyPress() {
     switch(state) {
     case 0:
-      if (Jinput == true)
-      {
-        username = textInput(username, "username", false);
-      }
+      //if (Jinput == true)
+     // {
+        //username = textInput(username, "username", false);
+      //}
       break;
     case 1: 
       bc.BString[0] = textInput(bc.BString[0], "", true);

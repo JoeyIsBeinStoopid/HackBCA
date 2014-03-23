@@ -13,10 +13,9 @@ class BClient {
   }
 
   void run() {
-    background(255);
     fill(100);
     textSize(16);
-    textDisplay(BString[0], 35, 45);
+    textDisplay(BString[0], 85, 85);
     Jcurrenttime=millis();
     if (JClient.available() > 0) {
       Joldtime = millis();
