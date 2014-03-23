@@ -6,8 +6,9 @@ Client JClient;
 String JText;
 int x;
 String[] BString = new String[1];
-String typedText = "your text here";
 PFont font;
+int Joldtime;
+int Jcurrenttime;
 void setup()
 {
   size(200, 200);
@@ -22,14 +23,18 @@ void draw()
   background(255);
   fill(100);
   text(BString[0]+(frameCount/10 % 2 == 0 ? "|" : ""), 35, 45);
+  Jcurrenttime=millis();
   if (JClient.available() > 0) {
-    BString[0] = JClient.readString();
-
+    //BString[0] = "";
+       Joldtime = millis();
+      BString[0] = JClient.readString();
     //x = JClient.read();
+       JClient.write(BString[0]);
   }
   //background(x);
-  println(JText);
-  JClient.write(BString[0]);
+    //JClient.write(BString[0]);
+  println(BString[0]);
+  //BString[0] = "";
 }
 
 void keyReleased() {
@@ -51,7 +56,6 @@ void keyReleased() {
       break;
     case CONTROL:
       saveStrings("yolo.txt", BString);
-      println("Peniz.");
       break;
     default:
       BString[0] += key;
