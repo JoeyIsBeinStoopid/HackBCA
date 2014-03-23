@@ -1,19 +1,25 @@
 import processing.net.*;
 BClient bc;
+UI ui;
 void setup()
 {
-  size(200, 200);
+  size(500, 500);
+  ui = new UI();
   bc = new BClient();
-  bc.JClient = new Client(this, "127.0.0.1", 5204);
+  ui.loadStartScreen();
 }
 
 void draw()
 {
-  bc.run();
+  background(0);
+  ui.display();
+  if (ui.shouldLoad) {
+    bc.JClient = new Client(this, "127.0.0.1", 5204);
+    ui.shouldLoad = false;
+  }
 }
 
 void keyReleased() {
-  bc.BString[0] = textInput(bc.BString[0], "", true);
-  bc.JClient.write(bc.BString[0]);
+  ui.keyPress();
 }
 

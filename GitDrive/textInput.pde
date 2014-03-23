@@ -33,3 +33,11 @@ void textDisplay(String text, int x, int y) {
   text(text+(frameCount/10 % 2 == 0 ? "_" : ""), x, y);
 }
 
+boolean buttonCorner(int x, int y, int w, int h) {
+  return (mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y+h && mousePressed) ? true : false;
+}
+
+boolean buttonCenter(int x, int y, int w, int h) {     
+  return (mouseX >= x - w/2 && mouseX <= x + w/2 && mouseY >= y - h/2 && mouseY <= y + h/2 && mousePressed) ? true : false;
+}
+
