@@ -50,7 +50,8 @@ class UI {
     textAlign(CORNER);
     if (Jinput == false)
     {
-      textDisplay("Pease Select a file name, including extensions (ex. code.CPP) \n" + codename, 0, height/2-200);
+      textAlign(CENTER);
+      textDisplay("Please Select a file name, \nincluding extensions (ex. code.CPP) \n" + codename, width/2, height/2-150);
     }
     else {
       textDisplay("Please choose a username before connecting: \n" + username, width/2 - 215, height/2 - 125);
