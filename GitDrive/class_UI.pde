@@ -32,12 +32,19 @@ class UI {
     textSize(20);
     text("Connect to server", width/2, height/2);
     if (buttonCenter(width/2, height/2, 200, 100)) {
-      loadDocScreen();
+      if (username.length() > 0) {
+        loadDocScreen();
+      } 
+      else {
+        textAlign(CENTER);
+        text("Please choose a username.", width/2, height/2 - 100);
+      }
     }
     textSize(20);
     textAlign(CORNER);
-    textDisplay("Please choose a username: \n" + username, width/2 - 125, height/2 - 100);
+    textDisplay("Please choose a username before connecting: \n" + username, width/2 - 215, height/2 - 125);
   }
+
 
   void loadDocScreen() {
     state = docState;
