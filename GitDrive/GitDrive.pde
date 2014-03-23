@@ -12,7 +12,8 @@ int Jcurrenttime;
 void setup()
 {
   size(200, 200);
-  JClient = new Client(this, "10.31.66.4", 5204);
+  //JClient = new Client(this, "10.31.66.4", 5204);
+  JClient = new Client(this,"127.0.0.1", 5204);
   JText= "";
   BString[0] = "";
   font = createFont("Helvetica", 18);
@@ -28,8 +29,8 @@ void draw()
     //BString[0] = "";
        Joldtime = millis();
       BString[0] = JClient.readString();
-    //x = JClient.read();
-       JClient.write(BString[0]);
+    //x = JClient.read()
+       
   }
   //background(x);
     //JClient.write(BString[0]);
@@ -60,6 +61,8 @@ void keyReleased() {
     default:
       BString[0] += key;
     }
+    
   }
+  JClient.write(BString[0]);
 }
 
