@@ -27,7 +27,7 @@ class UI {
     fill(255);
     rectMode(CENTER);
     rect(width/2, height/2, 200, 100);
-    fill(100);
+    fill(0);
     textAlign(CENTER);
     textSize(20);
     text("Connect to server", width/2, height/2);
@@ -36,10 +36,12 @@ class UI {
         loadDocScreen();
       } 
       else {
+        fill(255, 0, 0);
         textAlign(CENTER);
         text("Please choose a username.", width/2, height/2 - 100);
       }
     }
+    fill(255);
     textSize(20);
     textAlign(CORNER);
     textDisplay("Please choose a username before connecting: \n" + username, width/2 - 215, height/2 - 125);
@@ -51,6 +53,14 @@ class UI {
   }
 
   void docScreen() {
+  }
+
+  void keyPress() {
+    switch(ui.state) {
+    case 0:
+      ui.username = textInput(ui.username, "username", false);
+      break;
+    }
   }
 
   boolean buttonCorner(int x, int y, int w, int h) {

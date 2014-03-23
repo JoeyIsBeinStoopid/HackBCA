@@ -13,10 +13,6 @@ void draw()
 }
 
 void keyPressed() {
-  switch(ui.state) {
-  case 0:
-    ui.username = textInput(ui.username, "username", false);
-    break;
-  }
+  ui.keyPress();
 }
 
