@@ -4,7 +4,7 @@ class UI {
   int docState = 1;
   String username;
   boolean shouldLoad;
-  boolean Jinput;
+  boolean Jinput,Jinput2;
 
   UI() {
     username = "";
@@ -38,6 +38,7 @@ class UI {
     if (buttonCenter(width/2, height/2, 200, 100)) {
       if (username.length() > 0) {
         loadDocScreen();
+        Jinput2= true;
       } 
       else {
         fill(255, 0, 0);
@@ -47,14 +48,19 @@ class UI {
     }
     fill(255);
     textSize(20);
-    textAlign(CORNER);
+    textAlign(CENTER);
     if (Jinput == false)
     {
       textAlign(CENTER);
-      textDisplay("Please Select a file name, \nincluding extensions (ex. code.CPP) \n" + codename, width/2, height/2-150);
+      text("Please Select a file name, including extensions (ex. code.CPP)", width/2, height/2-150);
+      textAlign(CORNER);
+      textDisplay(codename,width/2-100, height/2-125);
     }
     else {
-      textDisplay("Please choose a username before connecting: \n" + username, width/2 - 215, height/2 - 125);
+       textAlign(CENTER);
+      text("Please choose a username before connecting:", width/2, height/2 - 125);
+      textAlign(CORNER);
+      textDisplay(username,width/2-100, height/2-100);
     }
   }
 
