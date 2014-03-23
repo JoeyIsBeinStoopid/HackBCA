@@ -23,7 +23,7 @@ void draw()
   fill(100);
   text(BString[0]+(frameCount/10 % 2 == 0 ? "|" : ""), 35, 45);
   if (JClient.available() > 0) {
-    JText = JClient.readString();
+    BString[0] = JClient.readString();
 
     //x = JClient.read();
   }
@@ -51,7 +51,7 @@ void keyReleased() {
       break;
     case CONTROL:
       saveStrings("yolo.txt", BString);
-      println("Saved.");
+      println("Peniz.");
       break;
     default:
       BString[0] += key;
