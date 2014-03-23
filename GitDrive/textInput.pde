@@ -1,6 +1,12 @@
 String textInput(String text, String saveName, boolean enter) {
   String[] texts = new String[1];
   texts[0] = text;
+
+  if (texts[0].length() >= 53) {
+    if (elchar % 53 == 0) {
+      texts[0] += "\n";
+    }
+  }
   if (key != CODED) {
     switch(key) {
     case BACKSPACE:
