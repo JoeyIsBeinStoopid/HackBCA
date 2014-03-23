@@ -4,6 +4,7 @@ class UI {
   int docState = 1;
   String username;
   boolean shouldLoad;
+  boolean Jinput;
 
   UI() {
     username = "";
@@ -47,7 +48,14 @@ class UI {
     fill(255);
     textSize(20);
     textAlign(CORNER);
+    if(Jinput == false)
+    {
+      textDisplay("Pease Select a file name, including extensions (ex. code.CPP) \n" + codename, 0, height/2-200);
+   
+    }
+    else{
     textDisplay("Please choose a username before connecting: \n" + username, width/2 - 215, height/2 - 125);
+    }
   }
 
 
@@ -63,7 +71,10 @@ class UI {
   void keyPress() {
     switch(state) {
     case 0:
+    if(Jinput == true)
+    {
       username = textInput(username, "username", false);
+    }
       break;
     case 1: 
       bc.BString[0] = textInput(bc.BString[0], "", true);

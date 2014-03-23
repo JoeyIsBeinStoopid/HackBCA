@@ -22,7 +22,7 @@ class BClient {
       Joldtime = millis();
       BString[0] = JClient.readString();
     }
-    println(BString[0]);
+    //println(BString[0]);
   }
 }
 

@@ -23,12 +23,17 @@ void draw()
 
 void keyReleased() {
   ui.keyPress();
+  if(ui.Jinput==false)
+  {
     codename = textInput(codename, "", false) ;
+  }
     if(key==ENTER)
     {
+      ui.Jinput=true;
       saveStrings(codename, bc.BString );
+       println(true);
     }
-     
+    
 }
 
 
