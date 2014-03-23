@@ -4,7 +4,7 @@ UI ui;
 String codename;
 void setup()
 {
-  size(500, 500);
+  size(600, 700);
   ui = new UI();
   bc = new BClient();
   ui.loadStartScreen();

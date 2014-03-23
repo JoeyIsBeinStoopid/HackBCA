@@ -15,7 +15,7 @@ class BClient {
   void run() {
     background(255);
     fill(100);
-    textSize(18);
+    textSize(16);
     textDisplay(BString[0], 35, 45);
     Jcurrenttime=millis();
     if (JClient.available() > 0) {
