@@ -10,7 +10,7 @@ String typedText = "your text here";
 PFont font;
 void setup()
 {
-  size(200, 200);
+  size(displayWidth, 200);
   JClient = new Client(this, "10.31.66.4", 5204);
   JText= "";
   BString[0] = "";
@@ -23,7 +23,7 @@ void draw()
   fill(100);
   text(BString[0]+(frameCount/10 % 2 == 0 ? "|" : ""), 35, 45);
   if (JClient.available() > 0) {
-    BString[0] = JClient.readString();
+    //BString[0] = JClient.readString();
 
     //x = JClient.read();
   }
