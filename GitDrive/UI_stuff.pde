@@ -61,9 +61,9 @@ class UI {
   }
 
   void keyPress() {
-    switch(ui.state) {
+    switch(state) {
     case 0:
-      ui.username = textInput(ui.username, "username", false);
+      username = textInput(username, "username", false);
       break;
     case 1: 
       bc.BString[0] = textInput(bc.BString[0], "", true);

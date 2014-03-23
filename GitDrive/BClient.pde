@@ -16,18 +16,13 @@ class BClient {
     background(255);
     fill(100);
     textSize(18);
-    text(BString[0]+(frameCount/10 % 2 == 0 ? "|" : ""), 35, 45);
+    textDisplay(BString[0], 35, 45);
     Jcurrenttime=millis();
     if (JClient.available() > 0) {
-      //BString[0] = "";
       Joldtime = millis();
       BString[0] = JClient.readString();
-      //x = JClient.read()
     }
-    //background(x);
-    //JClient.write(BString[0]);
     println(BString[0]);
-    //BString[0] = "";
   }
 }
 

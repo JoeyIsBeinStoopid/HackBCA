@@ -11,7 +11,6 @@ String textInput(String text, String saveName, boolean enter) {
       break;
     case ENTER:
     case RETURN:
-      // comment out the following two lines to disable line-breaks
       if (enter) {
         texts[0] += "\n";
       }
